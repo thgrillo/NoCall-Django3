@@ -74,13 +74,23 @@ WSGI_APPLICATION = 'nocall.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'nocalldb', 
+        'USER': 'postgres', 
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -118,13 +128,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-#prefix
-STATIC_URL = '/static/'
 
-# STATICFILES_DIRS is the list of folders where Django will search for additional static files aside from the static folder of each app installed.
+# STATICFILES_DIRS is the list of folders where Django will search for additional 
+# static files aside from the static folder of each app installed. If you create 'static' folder inside of your_app, don't need to set up.
 # MEDIA_ROOT is the folder where files uploaded using FileField will go.
 # STATIC_ROOT is the folder where static files will be stored after using manage.py collectstatic
 
-# STATICFILES_DIRS = [ BASE_DIR+"/static", ]
+STATIC_URL = '/static/' #prefix
+STATIC_ROOT = BASE_DIR / 'static'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+# LOGIN_REDIRECT_URL = 'appmark'
+# LOGOUT_REDIRECT_URL = 'home'
