@@ -34,23 +34,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto">
-          <h2 class="section-heading">Faça Login!</h2>
-            <form method="POST" action="{% url 'login' %}">
-                {% csrf_token %}
-                {{ form.username.label_tag }}
-                {{ form.username }}
-
-                {{ form.password.label_tag }}
-                {{ form.password }}
-
-                {{ form.errors }}
-
-            <input type="submit" value="Login">
-            </form>
-          <div class="badges">
-            <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-            <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-          </div>
+          <h2 class="section-heading">Você saiu!</h2>
+          <a href="{% url 'login'%}">Click here to login again.</a>
         </div>
       </div>
     </div>

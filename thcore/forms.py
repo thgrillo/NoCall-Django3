@@ -1,4 +1,5 @@
 from django import forms
+# from .models import Check
 
 
 class MarkForm(forms.ModelForm):
@@ -8,3 +9,7 @@ class MarkForm(forms.ModelForm):
     inorout = forms.ChoiceField(label='Entrada ou saída?', choices=CHOICES, widget=forms.RadioSelect)
     locname = forms.CharField(label='Digite o local') 
     opsticket = forms.CharField(label='Ticket')
+
+    # class Meta:
+    #     model = Mark
+    #     fields = ['tecname', 'locname','opsticket', 'inorout']

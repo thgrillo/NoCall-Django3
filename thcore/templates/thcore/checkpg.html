@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
             <li class="nav-igin/tem">
-                <a class="nav-link js-scroll-trigger" href="#download">Login</a>
+                <a class="nav-link js-scroll-trigger" href="#download">Logout</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
@@ -26,7 +26,6 @@
     </nav>
 
 
-    <h1>Registrar Entrada ou Saída</h1>
     <script type="text/javascript">
       // var x = document.getElementById("demo");
       
@@ -65,19 +64,32 @@
         }
       }
       </script>  
-    <form action="" method="POST">
+    
+    <section class="download bg-primary text-center" id="download">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto">
+              <h2 class="section-heading">Registrar Entrada ou Saída</h2>
+              <form action="" method="POST">
                 
-        {% csrf_token %}
-        {{ form.as_p }}
-        
-    
-        
-        <!-- <p id="demo"></p> -->
-        
-        
-      <input onclick="getLocation()" type="submit" value="Enviar" class="btn btn-primary">
-    </form>
-    
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+            
+                
+                <!-- <p id="demo"></p> -->
+                
+                
+              <input onclick="getLocation()" type="submit" value="Enviar" class="btn btn-primary">
+            </form>
+              <div class="badges">
+                <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+                <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
     
     
 {% endblock %}
