@@ -6,7 +6,7 @@ por marcações web.
 
 Contexto:
 
-Técnicos de diversas empresas ligam para dizer que estão acessando ou saindo de um determinado local.
+Técnicos de diversas empresas ligam para avisar que estão acessando ou saindo de um determinado local.
 
 
 Informações necessárias(dados relevantes):
@@ -20,11 +20,10 @@ Informações necessárias(dados relevantes):
 
 Plugins:
 
--Geolocalição (Google Maps)
+-Geolocalição (HTML 5)
 
 
 Ferramentas Utilizadas:
 
 -Django3    
--MongoDB (salvar os logs)
 -PostgreSql (Banco principal)
