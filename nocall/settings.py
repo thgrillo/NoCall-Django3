@@ -139,5 +139,5 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-# LOGIN_REDIRECT_URL = 'appmark'
-# LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'send_data'
+LOGOUT_REDIRECT_URL = 'home'

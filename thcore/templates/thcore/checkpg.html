@@ -1,0 +1,83 @@
+{% extends 'thcore/base.html' %}
+
+{% block title %}
+    <title>NoCall - Enviar</title>
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/home/">NoCall</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-igin/tem">
+                <a class="nav-link js-scroll-trigger" href="#download">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+
+    <h1>Registrar Entrada ou Saída</h1>
+    <script type="text/javascript">
+      // var x = document.getElementById("demo");
+      
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else { 
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      
+      function showPosition(position) {
+         x.innerHTML = "Latitude: " + position.coords.latitude + 
+         "<br>Longitude: " + position.coords.longitude;
+        // var a = position.coords.latitude;
+        // var b = position.coords.longitude; 
+        position.coords.latitude = "{{ latitude }}";
+        position.coords.longitude = "{{ longitude }}";
+        // console.log(position.coords.latitude + " " + position.coords.longitude);
+      }
+      
+      function showError(error) {
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+          case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+          case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+          case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+        }
+      }
+      </script>  
+    <form action="" method="POST">
+                
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+    
+        
+        <!-- <p id="demo"></p> -->
+        
+        
+      <input onclick="getLocation()" type="submit" value="Enviar" class="btn btn-primary">
+    </form>
+    
+    
+    
+{% endblock %}
