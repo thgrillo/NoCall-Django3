@@ -1,8 +1,8 @@
 from django import forms
-# from .models import Check
+from .models import Mark
 
 
-class MarkForm(forms.ModelForm):
+class MarkForm(forms.Form):
 
     tecname = forms.CharField(label='Digite seu nome')
     CHOICES = [('entrada','Entrada'), ('saida','Saída')]
@@ -10,6 +10,3 @@ class MarkForm(forms.ModelForm):
     locname = forms.CharField(label='Digite o local') 
     opsticket = forms.CharField(label='Ticket')
 
-    # class Meta:
-    #     model = Mark
-    #     fields = ['tecname', 'locname','opsticket', 'inorout']

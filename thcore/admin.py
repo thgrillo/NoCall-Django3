@@ -1,5 +1,6 @@
 from django.contrib import admin
-# from .forms import Check
+from .forms import Mark
+from .models import *
 
 # Register your models here.
-# admin.site.register(Check)
+admin.site.register(Mark)

@@ -65,12 +65,12 @@
       }
       </script>  
     
-    <section class="download bg-primary text-center" id="download">
+    <section class="download bg-light text-center" id="download">
         <div class="container">
           <div class="row">
             <div class="col-md-8 mx-auto">
-              <h2 class="section-heading">Registrar Entrada ou Saída</h2>
-              <form action="" method="POST">
+              <h2 class="section-heading">Preencha para enviar</h2>
+              <form action="/send/" method="POST">
                 
                 {% csrf_token %}
                 {{ form.as_p }}
