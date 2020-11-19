@@ -13,5 +13,9 @@ class Mark(models.Model):
     latitude = models.CharField(max_length=50, default="")
     longitude = models.CharField(max_length=50, default="")
 
+    def publish(self):
+        self.created_date = timezone.now()
+        self.save()
+        
     def __str__(self):
         return self.opsticket

@@ -2,7 +2,7 @@ from django import forms
 from .models import Mark
 
 
-class MarkForm(forms.Form):
+class MarkForm(forms.ModelForm):
 
     tecname = forms.CharField(label='Digite seu nome')
     CHOICES = [('entrada','Entrada'), ('saida','Saída')]
@@ -10,3 +10,6 @@ class MarkForm(forms.Form):
     locname = forms.CharField(label='Digite o local') 
     opsticket = forms.CharField(label='Ticket')
 
+    class Meta:
+        model = Mark
+        fields = ['tecname', 'locname','opsticket', 'inorout']
