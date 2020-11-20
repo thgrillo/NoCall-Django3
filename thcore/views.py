@@ -10,19 +10,19 @@ def home(request):
 def login(request):   
     return render(request, 'registration/login.html')
 
-def save_user_geolocation(request):
+# def save_user_geolocation(request):
 
-    if request.method == 'POST':
-        latitude = request.POST['lat']
-        longitude = request.POST['long']
-        UserGeoLocation.create(
-            latitude= latitude,
-            longitude = longitude,
+#     if request.method == 'POST':
+#         latitude = request.POST['lat']
+#         longitude = request.POST['long']
+#         UserGeoLocation.create(
+#             latitude= latitude,
+#             longitude = longitude,
 
 
-        )
+#         )
 
-    return HttpResponse('')
+#     return HttpResponse('')
 
 
 
