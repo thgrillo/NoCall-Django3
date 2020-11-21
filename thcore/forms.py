@@ -12,4 +12,5 @@ class MarkForm(forms.ModelForm):
 
     class Meta:
         model = Mark
-        fields = ['tecname', 'locname','opsticket', 'inorout']
+        fields = ['tecname', 'locname','opsticket', 'inorout', 'latitude', 'longitude']
+        widgets = {'latitude': forms.HiddenInput(), 'longitude': forms.HiddenInput()}

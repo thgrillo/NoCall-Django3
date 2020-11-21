@@ -25,38 +25,8 @@
         </div>
     </nav>
 
-    
-    <!-- backup -->
-    <p id="demo"></p>
-    
-    <script>
-    var x = document.getElementById("demo");
-    
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-    
-    function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude;
-    }
-    </script> 
+   
 
-
-
-
-
-
-  
-  
-  
-
-
-    
     <section class="download bg-light text-center" id="download">
         <div class="container">
           <div class="row">
@@ -66,15 +36,12 @@
                 
                 {% csrf_token %}
                 {{ form.as_p }}
-                
-            
-                
-                <!-- <p id="demo"></p> -->
-                
+           
                 
               <!-- <input type="submit" value="Enviar" class="btn btn-primary"> -->
               <button class="btn btn-primary" type="submit" onclick="getLocation()">Enviar</button>
             </form>
+            <p id="demo" hidden></p>
               <div class="badges">
                 <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
                 <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
@@ -83,6 +50,31 @@
           </div>
         </div>
     </section>
+
+    <script>
+      var x = document.getElementById("demo");
+      
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+  
+        var lat = position.coords.latitude
+        var lng = position.coords.longitude
+  
+        document.getElementById('id_latitude').value = lat;
+        document.getElementById('id_longitude').value = lng;
+        
+      }
+      </script> 
+  
     
     
 {% endblock %}
