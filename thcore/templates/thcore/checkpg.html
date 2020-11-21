@@ -37,15 +37,11 @@
                 {% csrf_token %}
                 {{ form.as_p }}
            
-                
-              <!-- <input type="submit" value="Enviar" class="btn btn-primary"> -->
+              
               <button class="btn btn-primary" type="submit" onclick="getLocation()">Enviar</button>
             </form>
             <p id="demo" hidden></p>
-              <div class="badges">
-                <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-                <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-              </div>
+              
             </div>
           </div>
         </div>
