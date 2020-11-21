@@ -18,12 +18,8 @@ Informações necessárias(dados relevantes):
 -localização
 
 
-Plugins:
-
--Geolocalição (HTML 5)
-
-
 Ferramentas Utilizadas:
 
 -Django3    
 -PostgreSql (Banco principal)
+-Geolocalização
