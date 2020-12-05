@@ -140,4 +140,4 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/send/'
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = '/home/'

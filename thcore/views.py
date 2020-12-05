@@ -8,15 +8,17 @@ def home(request):
     return render(request, 'thcore/home.html')
 
 def loginPage(request): 
-    return render(request, 'accounts/login.html')
+    return render(request, 'registration/login.html')
 
 @login_required
 def send_data(request):
+    # username = request.user.get_username()
     if request.method == 'GET':
         form = MarkForm()
     else:
         form = MarkForm(request.POST)
         if form.is_valid():
+            Mark.empname = username
             form.save()
             return redirect('/home/')
     context = {'form': form}

@@ -32,15 +32,18 @@
           <div class="row">
             <div class="col-md-8 mx-auto">
               <h2 class="section-heading">Preencha para enviar</h2>
-              <form action="/send/" method="POST">
+              <form action="" method="POST">
                 
                 {% csrf_token %}
                 {{ form.as_p }}
-           
               
-              <button class="btn btn-primary" type="submit" onclick="getLocation()">Enviar</button>
+              <button id="sendall" class="btn btn-primary" type="submit" style="visibility:hidden;">Enviar</button>
             </form>
-            <p id="demo" hidden></p>
+            <div id="divhid">
+            <h3>REVISE OS DADOS</h3>
+              <button class="btn btn-primary" onclick="getLocation()">Dados corretos!</button><br>
+            </div>
+              <p id="demo" hidden></p>
               
             </div>
           </div>
@@ -49,7 +52,7 @@
 
     <script>
       var x = document.getElementById("demo");
-      
+
       function getLocation() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition);
@@ -68,7 +71,11 @@
         document.getElementById('id_latitude').value = lat;
         document.getElementById('id_longitude').value = lng;
         
+        document.getElementById('sendall').style.visibility = "visible"; 
+
+        document.getElementById('divhid').style.visibility = "hidden";
       }
+      
       </script> 
   
     
